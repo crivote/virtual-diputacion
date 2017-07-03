@@ -1,0 +1,237 @@
+html,
+body {
+    font-family: 'Open Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+.contenedor {
+    width: 100vw;
+    max-width: 480px;
+    margin: 0 auto;
+    overflow: hidden;
+    position: relative;
+}
+#marcador {
+    width: 100%;
+    background-color: #006680;
+    height: 48px;
+    color: white;
+    font-weight: 800;
+    padding: 8px 14px 0;
+    box-sizing: border-box;
+    font-size: 24px;
+    position: relative;
+}
+#marcador ul {
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    right: 14px;
+    top: 8px;
+}
+#marcador ul li {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    background-color: rgba(255, 255, 255, 0.39);
+    color: #006680;
+    text-align: center;
+    line-height: 30px;
+    margin-left: 5px;
+    border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+}
+#marcador ul li i {
+    z-index: 10;
+    position: relative;
+    opacity: 0.7;
+}
+#marcador ul li span {
+    content: '';
+    display: block;
+    background-color: rgba(255, 255, 255, 0.71);
+    width: 30px;
+    height: 50%;
+    bottom: 0;
+    left: 0;
+    position: absolute;
+    z-index: 1;
+}
+#marcador .year span {
+    margin-left: 10px;
+    color: rgba(255, 255, 255, 0.62);
+}
+#areatexto {
+    width: 100%;
+    height: 130px;
+    background-color: #e5e4e4;
+    box-shadow: inset 0 0 80px rgba(0, 0, 0, 0.14);
+    border-top: 10px solid black;
+    position: relative;
+}
+#container {
+    height: 100vw;
+    max-height: 480px;
+    width: 100%;
+    background-size: 101%;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: relative;
+}
+#container.conferencia {
+    background-image: url(../pics/conferencia.png);
+}
+#container.despacho {
+    background-image: url(../pics/despacho.png);
+}
+#container.final {
+    background-image: url(../pics/microfonos.png);
+}
+#container.conferencia h1 {
+    position: absolute;
+    left: 50px;
+    right: 50px;
+    text-align: center;
+    top: 35px;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 22px;
+    letter-spacing: -0.5px;
+    color: #006680;
+}
+#container.conferencia h2 {
+    left: 60px;
+    top: 75px;
+    position: absolute;
+    font-weight: 600;
+    right: 50px;
+    font-size: 19px;
+    letter-spacing: -1px;
+}
+#container.conferencia h2 strong {
+    font-weight: 800;
+}
+#container.conferencia p {
+    position: absolute;
+    left: 200px;
+    top: 170px;
+    right: 40px;
+    font-size: 14px;
+    font-weight: 600;
+}
+#container.despacho h1 {
+    position: absolute;
+    text-transform: uppercase;
+    font-size: 16px;
+    top: 35%;
+    left: 22%;
+    right: 24%;
+    text-align: center;
+    letter-spacing: -0.6px;
+}
+#container.despacho p {
+    position: absolute;
+    font-size: 16px;
+    line-height: 1.6em;
+    top: 42%;
+    left: 24%;
+    right: 24%;
+    letter-spacing: -0.6px;
+}
+#container.final h1 {
+    position: absolute;
+    text-transform: uppercase;
+    font-size: 26px;
+    top: 25%;
+    left: 22%;
+    right: 24%;
+    text-align: center;
+    letter-spacing: -0.6px;
+    color: white;
+}
+#container.final p {
+    position: absolute;
+    font-size: 21px;
+    font-weight: 600;
+    line-height: 1.6em;
+    top: 35%;
+    left: 10%;
+    right: 10%;
+    text-align: center;
+    letter-spacing: -0.6px;
+    color: white
+}
+#areatexto button {
+    position: absolute;
+    bottom: 50px;
+    width: 50%;
+    left: 25%;
+    background-color: white;
+    color: black;
+    height: 50px;
+    cursor: pointer;
+    font-size: 20px;
+    border-radius: 6px;
+    animation: bounceIn 1s ease-out 0 1;
+}
+#areatexto .respuesta {
+    position: absolute;
+    bottom: -30px;
+    width: 45vw;
+    max-width: 230px;
+    height: 200px;
+    background-color: #d0cd9d;
+    box-shadow: 0 2px 16px 2px rgba(0, 0, 0, 0.25);
+    transition: 0.4s all ease-in-out;
+    padding: 5%;
+    box-sizing: border-box;
+    font-weight: 600;
+    font-size: 18px;
+    color: rgba(100, 66, 1, 0.92);
+}
+.contenedor p {
+    text-align: center;
+    color: grey;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    font-size: 12px;
+}
+#areatexto .respuesta:hover {
+    background-color: #fffdd2;
+    cursor: pointer;
+}
+#areatexto .respuesta#no {
+    left: -35px;
+    transform: rotateZ(8deg);
+    transform-origin: left bottom;
+}
+#areatexto .respuesta#si {
+    right: -35px;
+    transform: rotateZ(-8deg);
+    transform-origin: right bottom;
+}
+#areatexto .respuesta#no:hover {
+    left: -10px;
+    transform: rotateZ(2deg) scale(1.05);
+}
+#areatexto .respuesta#si:hover {
+    right: -10px;
+    transform: rotateZ(-2deg) scale(1.05);
+}
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.1);
+        opacity: 0;
+    }
+    60% {
+        transform: scale(1.2);
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
