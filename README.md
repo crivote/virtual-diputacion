@@ -9,3 +9,4 @@ TO DO
 - Añadir enlace de créditos con pantalla informativa al juego
 - Tooltips a iconos superiores e información de efecto de opciones de juego
 - Nivel de dificultad
+- Arreglar tamaños tipografías para visualización en móviles
