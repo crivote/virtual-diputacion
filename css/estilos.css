@@ -3,14 +3,22 @@ body {
     font-family: 'Open Sans', sans-serif;
     margin: 0;
     padding: 0;
+    background-color: silver;
 }
+
+* {
+    box-sizing: border-box;
+}
+
 .contenedor {
     width: 100vw;
-    max-width: 480px;
+    max-width: 768px;
     margin: 0 auto;
     overflow: hidden;
     position: relative;
+    height: 100vh;
 }
+
 #marcador {
     width: 100%;
     background-color: #006680;
@@ -20,8 +28,12 @@ body {
     padding: 8px 14px 0;
     box-sizing: border-box;
     font-size: 24px;
-    position: relative;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    max-width: 768px;
 }
+
 #marcador ul {
     margin: 0;
     padding: 0;
@@ -29,6 +41,7 @@ body {
     right: 14px;
     top: 8px;
 }
+
 #marcador ul li {
     display: inline-block;
     width: 30px;
@@ -42,11 +55,13 @@ body {
     position: relative;
     overflow: hidden;
 }
+
 #marcador ul li i {
     z-index: 10;
     position: relative;
     opacity: 0.7;
 }
+
 #marcador ul li span {
     content: '';
     display: block;
@@ -58,10 +73,12 @@ body {
     position: absolute;
     z-index: 1;
 }
+
 #marcador .year span {
     margin-left: 10px;
     color: rgba(255, 255, 255, 0.62);
 }
+
 #areatexto {
     width: 100%;
     height: 130px;
@@ -69,57 +86,65 @@ body {
     box-shadow: inset 0 0 80px rgba(0, 0, 0, 0.14);
     border-top: 10px solid black;
     position: relative;
+    background-color: #003543;
 }
+
 #container {
-    height: 100vw;
-    max-height: 480px;
+    height: calc(100vh - 175px);
+    min-height: 460px;
     width: 100%;
-    background-size: 101%;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     position: relative;
+    margin-top: 45px;
+    padding: 55px 20px 30px;
 }
+
 #container.conferencia {
     background-image: url(../pics/conferencia.png);
 }
+
 #container.despacho {
     background-image: url(../pics/despacho.png);
 }
+
 #container.final {
     background-image: url(../pics/microfonos.png);
 }
+
 #container.conferencia h1 {
-    position: absolute;
-    left: 50px;
-    right: 50px;
     text-align: center;
-    top: 35px;
     text-transform: uppercase;
     font-weight: 700;
-    font-size: 22px;
+    font-size: 20px;
     letter-spacing: -0.5px;
     color: #006680;
+    margin: 0;
 }
+
 #container.conferencia h2 {
-    left: 60px;
-    top: 75px;
-    position: absolute;
     font-weight: 600;
-    right: 50px;
-    font-size: 19px;
+    font-size: 18px;
     letter-spacing: -1px;
+    line-height: 1.5;
+    text-align: center;
 }
+
 #container.conferencia h2 strong {
     font-weight: 800;
 }
+
 #container.conferencia p {
-    position: absolute;
-    left: 200px;
-    top: 170px;
-    right: 40px;
     font-size: 14px;
     font-weight: 600;
+    margin-left: 130px;
+    padding: 20px;
+    background-color: #ffa700;
+    position: relative;
+    color: black;
 }
+
 #container.despacho h1 {
     position: absolute;
     text-transform: uppercase;
@@ -130,6 +155,7 @@ body {
     text-align: center;
     letter-spacing: -0.6px;
 }
+
 #container.despacho p {
     position: absolute;
     font-size: 16px;
@@ -139,6 +165,7 @@ body {
     right: 24%;
     letter-spacing: -0.6px;
 }
+
 #container.final h1 {
     position: absolute;
     text-transform: uppercase;
@@ -150,6 +177,7 @@ body {
     letter-spacing: -0.6px;
     color: white;
 }
+
 #container.final p {
     position: absolute;
     font-size: 21px;
@@ -162,19 +190,22 @@ body {
     letter-spacing: -0.6px;
     color: white
 }
+
 #areatexto button {
-    position: absolute;
-    bottom: 50px;
-    width: 50%;
-    left: 25%;
-    background-color: white;
-    color: black;
-    height: 50px;
+    display: block;
+    margin: 20px auto;
+    background-color: #3787e3;
+    color: white;
     cursor: pointer;
-    font-size: 20px;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
     border-radius: 6px;
+    border: 0;
+    padding: 10px 15px;
     animation: bounceIn 1s ease-out 0 1;
 }
+
 #areatexto .respuesta {
     position: absolute;
     bottom: -30px;
@@ -190,6 +221,20 @@ body {
     font-size: 18px;
     color: rgba(100, 66, 1, 0.92);
 }
+
+#areatexto.esconder .respuesta {
+    bottom: -240px;
+}
+
+#areatexto.esconder .respuesta#no {
+    left: -50vw;
+}
+
+#areatexto.esconder .respuesta#si {
+    right: -50vw;
+}
+
+
 .contenedor p {
     text-align: center;
     color: grey;
@@ -199,37 +244,45 @@ body {
     right: 0;
     font-size: 12px;
 }
+
 #areatexto .respuesta:hover {
     background-color: #fffdd2;
     cursor: pointer;
 }
+
 #areatexto .respuesta#no {
     left: -35px;
     transform: rotateZ(8deg);
     transform-origin: left bottom;
 }
+
 #areatexto .respuesta#si {
     right: -35px;
     transform: rotateZ(-8deg);
     transform-origin: right bottom;
 }
+
 #areatexto .respuesta#no:hover {
     left: -10px;
     transform: rotateZ(2deg) scale(1.05);
 }
+
 #areatexto .respuesta#si:hover {
     right: -10px;
     transform: rotateZ(-2deg) scale(1.05);
 }
+
 @keyframes bounceIn {
     0% {
         transform: scale(0.1);
         opacity: 0;
     }
+
     60% {
         transform: scale(1.2);
         opacity: 1;
     }
+
     100% {
         transform: scale(1);
         opacity: 1;
